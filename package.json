@@ -1,0 +1,25 @@
+{
+    "name": "ultima-usecode",
+    "displayName": "Ultima Usecode",
+    "description": "Syntax highlighting for Ultima usecode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ultima-usecode",
+            "aliases": ["Ultima Usecode", "ultima-usecode"],
+            "extensions": [".uc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ultima-usecode",
+            "scopeName": "source.uc",
+            "path": "./syntaxes/ultima-usecode.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Ultima Usecode",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ultima-usecode",
+				"match": "\\b(if|else|while|for|case|return|accepts|break)\\b"
+			},
+			{
+				"name": "keyword.control.shape.ultima-usecode",
+				"match": "object+\\#"
+			},
+			{
+				"name": "keyword.control.script.ultima-usecode",
+				"match": "\\b(script|nohalt|actor|frame|after|ticks|call|sfx)\\b"
+			},
+			{
+				"name": "storage.type.basic.ultima-usecode",
+				"match": "\\b(var|void)\\b"
+			},
+			{
+				"name": "storage.modifier.ultima-usecode",
+				"match": "\\b(extern)\\b"
+			},
+			{
+				"name": "constant.numeric.decimal.ultima-usecode",
+				"match": "\\b[0-9]+\\.[0-9]*(F|f)?\\b"
+			},
+			{
+				"name": "constant.numeric.decimal.ultima-usecode",
+				"match": "(\\.([0-9]+)(F|f)?)\\b"
+			},
+			{
+				"name": "constant.numeric.decimal.ultima-usecode",
+				"match": "\\b([0-9]+(F|f)?)\\b"
+			},
+			{
+				"name": "constant.numeric.hex.ultima-usecode",
+				"match": "\\b(0(x|X)[0-9a-fA-F]+)\\b"
+			},
+			{
+				"name": "constant.language.ultima-usecode",
+				"match": "\\b(false|true)\\b"
+			}
+		]
+		},
+		"comment":
+		{
+			"patterns": [
+				{
+					"name": "comment.block.cs",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.ultima-usecode"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.ultima-usecode"
+						}
+					}
+				},
+				{
+					"name": "comment.line.double-slash.ultima-usecode",
+					"begin": "//",
+					"end": "$"
+				}
+			]
+			},
+			"strings": {
+			"name": "string.quoted.double.ultima-usecode",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ultima-usecode",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.uc"
+}
